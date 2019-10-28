@@ -17,6 +17,7 @@ class NewsController {
     }
     create(req, res) {
         let news = req.body;
+        console.log(news);
         newsService_1.default.create(news)
             .then(news => helper_1.default.sendResponse(res, HttpStatus.OK, 'Noticia cadastrada com sucesso.'))
             .catch(error => console.error.bind(console, `Error ${error}`));

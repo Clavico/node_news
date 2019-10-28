@@ -15,7 +15,7 @@ class StartUp {
         this._db = new Database();
         this._db.createConnection();
 
-        this.middler;
+        this.middler();
 
         this.routes();
     }
@@ -24,6 +24,7 @@ class StartUp {
         this.app.use(bodyParser.json());
         this.app.use(bodyParser.urlencoded({ extended: false }));
     }
+
     routes() {
         this.app.route('/').get((req, res) => {
             res.send({ versao: '0.0.1' })

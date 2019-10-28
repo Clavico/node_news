@@ -1,0 +1,14 @@
+version: "3"
+services:
+  api:
+    image: clavico/node_news
+    ports:
+      - "5001:3050"
+    links:
+      - link-db
+  link-db:
+      image: mongo
+      ports:
+        - "32773:27017"
+      environment:
+        - AUTH=no

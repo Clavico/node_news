@@ -9,7 +9,7 @@ class StartUp {
         this.app = express();
         this._db = new db_1.default();
         this._db.createConnection();
-        this.middler;
+        this.middler();
         this.routes();
     }
     middler() {
