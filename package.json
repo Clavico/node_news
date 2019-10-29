@@ -6,13 +6,15 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "compile": "tsc -w",
-    "start": "node program.js"
+    "start": "node program.js",
+    "local": "node ./dist/program.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "http-status": "^1.4.0",
     "mongoose": "^5.7.6",
@@ -21,6 +23,7 @@
   },
   "devDependencies": {
     "@types/body-parser": "^1.17.1",
+    "@types/cors": "^2.8.6",
     "@types/express": "^4.17.1",
     "@types/http-status": "^0.2.30",
     "@types/mongoose": "^5.5.22",

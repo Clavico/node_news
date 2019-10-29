@@ -3,7 +3,7 @@ services:
   api:
     image: clavico/node_news
     ports:
-      - "5001:3050"
+      - "80:3050"
     links:
       - link-db
   link-db:
