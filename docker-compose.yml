@@ -9,6 +9,6 @@ services:
   link-db:
       image: mongo
       ports:
-        - "32773:27017"
+        - "27017:27017"
       environment:
         - AUTH=no
