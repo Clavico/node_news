@@ -2,11 +2,14 @@ import * as express from "express";
 import * as bodyParser from "body-parser";
 import * as cors from "cors";
 import * as compression from "compression";
+import { graphqlHTTP } from 'express-graphql';
 
 import Database from "./infra/db";
 import Auth from './infra/auth';
 import Uploads from './infra/uploads'
 import newsRouter from "./routers/newsRouter";
+import schemas from "./graphql/schemas";
+import resolvers from "./graphql/resolvers";
 
 class StartUp {
     public app: express.Application
@@ -60,7 +63,11 @@ class StartUp {
 
         this.app.use("/", newsRouter);
 
-
+        this.app.use('/graphql', graphqlHTTP({
+            schema: schemas,
+            rootValue: resolvers,
+            graphiql: true
+          }));
     }
 }
 
