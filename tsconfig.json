@@ -3,7 +3,8 @@
         "skipLibCheck": true,
         "target": "es6",
         "module": "commonjs",
-        "outDir": "dist"
+        "outDir": "dist",
+        "incremental": true
     },
     "include": [        
         "src/**/*"
